@@ -1,0 +1,381 @@
+{$VERSION 2.2.0000}
+{$CLEO .cs}
+
+thread 'ANIMD' 
+
+:ANIMD_1
+wait 0 
+if 
+   Player.Defined($PLAYER_CHAR)
+else_jump @ANIMD_1
+
+
+
+:ANIMD_100
+wait 5 
+if 
+   Actor.Dead($PLAYER_ACTOR)
+else_jump @ANIMD_100
+ 
+05E6: 0@ = actor $PLAYER_ACTOR struct 
+000A: 0@ += 76 // integer values 
+0209: 6@ = random_int 14 23 
+
+:ANIMD_3
+wait 2
+if and
+0019:   6@ > 18 // integer values 
+001B:   20 > 6@ // integer values 
+jf @ANIMD_4
+jump @ANIMD_19 
+
+:ANIMD_4
+wait 2
+if and
+0019:   6@ > 19 // integer values 
+001B:   21 > 6@ // integer values 
+jf @ANIMD_5
+jump @ANIMD_20 
+
+:ANIMD_5
+wait 2
+if and
+0019:   6@ > 20 // integer values 
+001B:   22 > 6@ // integer values 
+jf @ANIMD_6
+jump @ANIMD_21 
+
+:ANIMD_6
+wait 2
+if and
+0019:   6@ > 21 // integer values 
+001B:   23 > 6@ // integer values 
+jf @ANIMD_7
+jump @ANIMD_22
+
+:ANIMD_7
+wait 2
+if and
+0019:   6@ > 16 // integer values 
+001B:   18 > 6@ // integer values  
+jf @ANIMD_23
+jump @ANIMD_17
+ 
+
+:ANIMD_17
+05E0: 0@ = read_memory 0@ size 4 virtual_protect 0 
+05E1: call 4216384 4 pop 4 4.0 6@ 0 0@
+0208: $100 = random_float -0.007 0.007 
+0208: $101 = random_float -0.007 0.007 
+0208: $200 = random_float -0.007 0.007 
+0208: $201 = random_float -0.007 0.007 
+0208: $300 = random_float -0.007 0.007 
+0208: $301 = random_float -0.007 0.007 
+0208: $400 = random_float -0.007 0.007 
+0208: $401 = random_float -0.007 0.007
+0208: $500 = random_float -0.007 0.007 
+0208: $501 = random_float -0.007 0.007 
+0208: $600 = random_float -0.007 0.007 
+0208: $601 = random_float -0.007 0.007 
+0208: $700 = random_float -0.007 0.007
+0208: $701 = random_float -0.007 0.007 
+0208: $800 = random_float -0.007 0.007 
+0208: $801 = random_float -0.007 0.007 
+0208: $900 = random_float -0.007 0.007
+0208: $901 = random_float -0.007 0.007 
+04C4: create_coordinate $896 $897 $898 from_actor $PLAYER_ACTOR offset 0.015 -0.07 0.56 
+0437: scatter_particle 76  -0.025 at $896 $897 $898 0 0 0
+0437: scatter_particle 76  -0.025 at $896 $897 $898 0 0 0
+0437: scatter_particle 76  -0.025 at $896 $897 $898 0 0 0
+0437: scatter_particle 76  -0.025 at $896 $897 $898 0 0 0
+0437: scatter_particle 76  -0.025 at $896 $897 $898 0 0 0
+0437: scatter_particle 76  -0.025 at $896 $897 $898 0 0 0
+0437: scatter_particle 76  -0.025 at $896 $897 $898 0 0 0
+0437: scatter_particle 76  -0.025 at $896 $897 $898 0 0 0
+0437: scatter_particle 76  -0.025 at $896 $897 $898 0 0 0
+0437: scatter_particle 76  -0.025 at $896 $897 $898 0 0 0
+0437: scatter_particle 76  -0.025 at $896 $897 $898 0 0 0
+0437: scatter_particle 76  -0.025 at $896 $897 $898 0 0 0
+0437: scatter_particle 76  -0.025 at $896 $897 $898 0 0 0
+0437: scatter_particle 76  -0.025 at $896 $897 $898 0 0 0
+0437: scatter_particle 8  0 at $896 $897 $898 $100 $101 0
+0437: scatter_particle 7  0 at $896 $897 $898 $200 $201 0
+0437: scatter_particle 8  0 at $896 $897 $898 $300 $301 0
+0437: scatter_particle 8  0 at $896 $897 $898 $400 $401 0
+0437: scatter_particle 7  0 at $896 $897 $898 $500 $501 0
+0437: scatter_particle 8  0 at $896 $897 $898 $600 $601 0
+0437: scatter_particle 8  0 at $896 $897 $898 $700 $701 0
+0437: scatter_particle 7  0 at $896 $897 $898 $800 $801 0
+0437: scatter_particle 8  0 at $896 $897 $898 $900 $901 0
+jump @ANIMD_2
+
+:ANIMD_19
+05E0: 0@ = read_memory 0@ size 4 virtual_protect 0 
+05E1: call 4216384 4 pop 4 4.0 6@ 0 0@
+0332: set_actor $PLAYER_ACTOR bleeding_to 1 
+0208: $100 = random_float -0.01 0.01 
+0208: $101 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0208: $200 = random_float -0.01 0.01 
+0208: $201 = random_float -0.01 0.01 
+0208: $102 = random_float -0.01 0.01 
+0208: $300 = random_float -0.01 0.01 
+0208: $301 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0208: $400 = random_float -0.01 0.01 
+0208: $401 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+04C4: create_coordinate $896 $897 $898 from_actor $PLAYER_ACTOR offset -0.115 -0.05 0.44 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $300 $301 $302 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $300 $301 $302 
+0208: $100 = random_float -0.01 0.01 
+0208: $101 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0208: $200 = random_float -0.01 0.01 
+0208: $201 = random_float -0.01 0.01 
+0208: $102 = random_float -0.01 0.01 
+0208: $300 = random_float -0.01 0.01 
+0208: $301 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0208: $400 = random_float -0.01 0.01 
+0208: $401 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $300 $301 $302 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $300 $301 $302 
+jump @ANIMD_2
+
+:ANIMD_20
+05E0: 0@ = read_memory 0@ size 4 virtual_protect 0 
+05E1: call 4216384 4 pop 4 4.0 6@ 0 0@
+0332: set_actor $PLAYER_ACTOR bleeding_to 1 
+0208: $100 = random_float -0.02 0.02 
+0208: $101 = random_float -0.02 0.02 
+0208: $102 = random_float -0.01 0.01 
+0208: $200 = random_float -0.02 0.02 
+0208: $201 = random_float -0.02 0.02 
+0208: $102 = random_float -0.01 0.01 
+0208: $300 = random_float -0.02 0.02 
+0208: $301 = random_float -0.02 0.02 
+0208: $102 = random_float -0.01 0.01 
+0208: $400 = random_float -0.02 0.02 
+0208: $401 = random_float -0.02 0.02 
+0208: $102 = random_float -0.01 0.01 
+04C4: create_coordinate $896 $897 $898 from_actor $PLAYER_ACTOR offset 0.13 -0.058 0.44 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $300 $301 $302 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $300 $301 $302 
+0208: $100 = random_float -0.02 0.02 
+0208: $101 = random_float -0.02 0.02 
+0208: $102 = random_float -0.01 0.01 
+0208: $200 = random_float -0.02 0.02 
+0208: $201 = random_float -0.02 0.02 
+0208: $102 = random_float -0.01 0.01 
+0208: $300 = random_float -0.02 0.02 
+0208: $301 = random_float -0.02 0.02 
+0208: $102 = random_float -0.01 0.01 
+0208: $400 = random_float -0.02 0.02 
+0208: $401 = random_float -0.02 0.02 
+0208: $102 = random_float -0.01 0.01 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $300 $301 $302 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $300 $301 $302 
+jump @ANIMD_2 
+
+:ANIMD_21
+05E0: 0@ = read_memory 0@ size 4 virtual_protect 0 
+05E1: call 4216384 4 pop 4 4.0 6@ 0 0@
+0332: set_actor $PLAYER_ACTOR bleeding_to 1 
+0208: $100 = random_float -0.01 0.01 
+0208: $101 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0208: $200 = random_float -0.01 0.01 
+0208: $201 = random_float -0.01 0.01 
+0208: $102 = random_float -0.01 0.01 
+0208: $300 = random_float -0.01 0.01 
+0208: $301 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0208: $400 = random_float -0.01 0.01 
+0208: $401 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+04C4: create_coordinate $896 $897 $898 from_actor $PLAYER_ACTOR offset -0.1 -0.05 -0.1 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $200 $201 $202  
+0437: scatter_particle 8 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $300 $301 $302 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $300 $301 $302 
+0208: $100 = random_float -0.01 0.01 
+0208: $101 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0208: $200 = random_float -0.01 0.01 
+0208: $201 = random_float -0.01 0.01 
+0208: $102 = random_float -0.01 0.01 
+0208: $300 = random_float -0.01 0.01 
+0208: $301 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0208: $400 = random_float -0.01 0.01 
+0208: $401 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $300 $301 $302 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $300 $301 $302 
+0208: $100 = random_float -0.01 0.01 
+0208: $101 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0208: $200 = random_float -0.01 0.01 
+0208: $201 = random_float -0.01 0.01 
+0208: $102 = random_float -0.01 0.01 
+0208: $300 = random_float -0.01 0.01 
+0208: $301 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0208: $400 = random_float -0.01 0.01 
+0208: $401 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $300 $301 $302 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $300 $301 $302 
+JUMP @ANIMD_2
+
+:ANIMD_22
+05E0: 0@ = read_memory 0@ size 4 virtual_protect 0 
+05E1: call 4216384 4 pop 4 4.0 6@ 0 0@
+0332: set_actor $PLAYER_ACTOR bleeding_to 1 
+0208: $100 = random_float -0.01 0.01 
+0208: $101 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0208: $200 = random_float -0.01 0.01 
+0208: $201 = random_float -0.01 0.01 
+0208: $102 = random_float -0.01 0.01 
+0208: $300 = random_float -0.01 0.01 
+0208: $301 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0208: $400 = random_float -0.01 0.01 
+0208: $401 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+04C4: create_coordinate $896 $897 $898 from_actor $PLAYER_ACTOR offset 0.08 -0.05 -0.1 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 76 -0.025 at $896 $897 $898 0 0 0 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $200 $201 $202  
+0437: scatter_particle 8 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $300 $301 $302 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $300 $301 $302 
+0208: $100 = random_float -0.01 0.01 
+0208: $101 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0208: $200 = random_float -0.01 0.01 
+0208: $201 = random_float -0.01 0.01 
+0208: $102 = random_float -0.01 0.01 
+0208: $300 = random_float -0.01 0.01 
+0208: $301 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0208: $400 = random_float -0.01 0.01 
+0208: $401 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $300 $301 $302 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $300 $301 $302 
+0208: $100 = random_float -0.01 0.01 
+0208: $101 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0208: $200 = random_float -0.01 0.01 
+0208: $201 = random_float -0.01 0.01 
+0208: $102 = random_float -0.01 0.01 
+0208: $300 = random_float -0.01 0.01 
+0208: $301 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0208: $400 = random_float -0.01 0.01 
+0208: $401 = random_float -0.01 0.01 
+0208: $102 = random_float -0.001 0.001 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $100 $101 $102 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $300 $301 $302 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $400 $401 $402 
+0437: scatter_particle 8 0.0 at $896 $897 $898 $200 $201 $202 
+0437: scatter_particle 7 0.0 at $896 $897 $898 $300 $301 $302 
+JUMP @ANIMD_2
+
+
+
+:ANIMD_23
+05E0: 0@ = read_memory 0@ size 4 virtual_protect 0 
+05E1: call 4216384 4 pop 4 4.0 6@ 0 0@ 
+jump @ANIMD_2
+
+:ANIMD_2
+wait 100
+if
+8118:   not actor $PLAYER_ACTOR dead
+jf @ANIMD_2
+0332: set_actor $PLAYER_ACTOR bleeding_to 0 
+jump @ANIMD_100 
