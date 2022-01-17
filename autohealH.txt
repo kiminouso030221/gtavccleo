@@ -1,0 +1,72 @@
+// This file was decompiled using vicescm.ini published by GtaForums.com on 27.7.07
+
+{$VERSION 2.2.0000}
+{$CLEO .cs}
+
+//-------------MAIN---------------
+thread 'HEAL' 
+
+:HEAL_0
+if 
+   Player.Defined($PLAYER_CHAR)
+jf @HEAL_0 
+
+:HEAL_1
+wait 0 
+if 
+05EE:  key_pressed 72 //VK_... 
+jf @HEAL_1
+
+:HEAL_2
+wait 0 
+if 
+05EE:  key_pressed 72 //VK_... 
+jf @HEAL_2 
+
+:HEAL_3
+wait 0 
+if 
+05EE:  key_pressed 69 //VK_... 
+jf @HEAL_3 
+
+:HEAL_4
+wait 0 
+if 
+05EE:  key_pressed 65 //VK_... 
+jf @HEAL_4 
+
+:HEAL_5
+wait 0 
+if 
+05EE:  key_pressed 76 //VK_... 
+jf @HEAL_5
+03E5: text_box 'CHEAT1'  // Cheat activated
+
+:HEAL_6
+wait 5000
+if 
+8183:   not player $PLAYER_CHAR health > 9
+jf  @HEAL_7
+
+0225: $1370 = player $PLAYER_CHAR health 
+0007: 10@ = $1370 // floating-point values  // Note: the incorrect math opcode was used here
+10@ += 1 // integer values 
+0222: set_player $PLAYER_CHAR health_to 10@ 
+JUMP @HEAL_6
+
+:HEAL_7
+0225: $1370 = player $PLAYER_CHAR health 
+0007: 10@ = $1370 // floating-point values  // Note: the incorrect math opcode was used here
+10@ += 5 // integer values 
+0222: set_player $PLAYER_CHAR health_to 10@ 
+jump @HEAL_6 
+
+HEX
+61 75 74 6F 68 65 61 6C 48 2E 63 73 00
+END 
+
+hex
+ 41 55 54 48 4F 52 5F 42 61 69 64 75 5F 49 44 3A 
+ 67 62 68 70 72 69 6E 63 65 0D 0A 41 55 54 48 4F 
+ 52 5F 51 51 3A 31 37 39 30 32 32 36 34 32 39 00 
+end

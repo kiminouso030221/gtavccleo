@@ -1,0 +1,58 @@
+// This file was decompiled using vicescm.ini published by GtaForums.com on 27.7.07
+
+{$VERSION 2.2.0000}
+{$CLEO .cs}
+
+//-------------MAIN---------------
+thread 'HEAL2' 
+
+:HEAL2_10
+if 
+   Player.Defined($PLAYER_CHAR)
+jf @HEAL2_10 
+
+:HEAL2_26
+wait 0 
+if 
+05EE:  key_pressed 65 //VK_... 
+jf @HEAL2_26 
+
+:HEAL2_45
+wait 0 
+if 
+05EE:  key_pressed 72 //VK_... 
+jf @HEAL2_45 
+
+:HEAL2_64
+wait 0 
+if 
+05EE:  key_pressed 69 //VK_... 
+jf @HEAL2_64 
+
+:HEAL2_83
+wait 0 
+if 
+05EE:  key_pressed 65 //VK_... 
+jf @HEAL2_83 
+
+:HEAL2_102
+wait 0 
+if 
+05EE:  key_pressed 76 //VK_... 
+jf @HEAL2_102 
+03E5: text_box 'CHEAT1'  // Cheat activated
+
+:HEAL2_131
+wait 200 
+035E: set_player $PLAYER_CHAR armour_to 2 
+jump @HEAL2_131
+ 
+HEX
+61 75 74 6F 68 65 61 6C 41 2E 63 73 00
+END 
+
+hex
+ 41 55 54 48 4F 52 5F 42 61 69 64 75 5F 49 44 3A 
+ 67 62 68 70 72 69 6E 63 65 0D 0A 41 55 54 48 4F 
+ 52 5F 51 51 3A 31 37 39 30 32 32 36 34 32 39 00 
+end
